@@ -49,7 +49,8 @@ jQuery(function($) {
       return false;
     },
     insertFields: function(content, assoc, link) {
-      return $(content).insertBefore(link);
+      // return $(content).insertBefore(link);
+      return $(content).appendTo('.pin');
     },
     removeFields: function(e) {
       var $link = $(e.currentTarget),
@@ -69,8 +70,8 @@ jQuery(function($) {
   };
 
   window.nestedFormEvents = new NestedFormEvents();
-  $('form a.add_nested_fields').live('click', nestedFormEvents.addFields);
-  $('form a.remove_nested_fields').live('click', nestedFormEvents.removeFields);
+  $('a.add_nested_fields').live('click', nestedFormEvents.addFields);
+  $('a.remove_nested_fields').live('click', nestedFormEvents.removeFields);
 });
 // http://plugins.jquery.com/project/closestChild
 /*
